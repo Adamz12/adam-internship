@@ -1,43 +1,73 @@
-.card-skeleton{
-    display: flex;
-    flex-direction: column;
-    position: relative;
+.card-skeleton {
+  display: flex;
+  flex-direction: column;
+  position: relative;
 }
 
-.circle__skeleton{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    bottom: 24px;
-    right: 1px;
-    left: 1px;
+.circle__skeleton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 24px;
+  right: 1px;
+  left: 1px;
 }
 
-.check-circle__skeleton{
-    color: #8364E2;
-    position: absolute;
-    bottom: 24px;
-    right: 10px;
-    left: 132px;
-    z-index: 1;
+.check-circle__skeleton {
+  color: #8364e2;
+  position: absolute;
+  bottom: 24px;
+  right: 10px;
+  left: 132px;
+  z-index: 1;
 }
 
-
-
-.name__skeleton{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    top: 26px;
-
+.name__skeleton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: 26px;
 }
 
-.code__skeleton{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative; /* Add this line */
-    top: 26px;
+.code__skeleton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative; /* Add this line */
+  top: 26px;
+}
+
+/* 
+
+
+
+NEW ITEMS SKELETON  
+
+
+
+*/
+
+.skeleton__de_countdown {
+  position: relative;
+  left: 80px;
+  z-index: 100;
+  width: 50%;
+  height: 24px;
+}
+
+.items-circle__skeleton {
+  width: 50px;
+  height: 50px;
+  border-radius: 9999px;
+}
+
+.img__skeleton {
+  width: 100%;
+  height: 200px;
+}
+
+.user-title__skeleton {
+  width: 80px;
 }
