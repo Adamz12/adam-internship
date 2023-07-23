@@ -6,7 +6,6 @@ import Skeleton from "react-loading-skeleton";
 import { Link } from "react-router-dom";
 
 const TopSellers = () => {
-  // Test123
 
   const [sellers, setSellers] = useState([]);
   const [loading, setLoading] = useState(true);
