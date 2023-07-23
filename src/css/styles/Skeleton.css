@@ -71,3 +71,26 @@ NEW ITEMS SKELETON
 .user-title__skeleton {
   width: 80px;
 }
+
+
+/* 
+
+
+TOP SELLERS
+
+
+*/
+
+.author-img__skeleton{
+    width: 50px;
+    height: 50px;
+    border-radius: 9999px;
+}
+
+.author-name__skeleton{
+    width: 100px;
+}
+
+.price__skeleton{
+    width: 50px;
+}
