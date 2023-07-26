@@ -16,7 +16,6 @@ const ExploreItems = () => {
     const { data } = await axios.get(
       `https://us-central1-nft-cloud-functions.cloudfunctions.net/explore?filter=${likes_high_to_low}`
     );
-    console.log(data);
     setExplore(data);
   }
 
