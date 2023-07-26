@@ -7,7 +7,6 @@ import { Link } from "react-router-dom";
 import Timer from "../UI/Timer";
 
 const ExploreItems = () => {
-  // Testing
   const [explore, setExplore] = useState([]);
   const [numItemsToShow, setNumItemsToShow] = useState(8);
   const [loading, setLoading] = useState(true);
