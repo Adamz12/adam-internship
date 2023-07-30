@@ -1,10 +1,126 @@
-import React from "react";
+import React, { useState } from "react";
 import AuthorBanner from "../images/author_banner.jpg";
 import AuthorItems from "../components/author/AuthorItems";
-import { Link } from "react-router-dom";
-import AuthorImage from "../images/author_thumbnail.jpg";
+import { Link, useParams } from "react-router-dom";
+import axios from "axios";
+import { useEffect } from "react";
 
 const Author = () => {
+  const { authorId } = useParams();
+  const [authorData, setAuthorData] = useState({});
+  // const [authorName, setAuthorName] = useState("");
+  // const [authorImage, setAuthorImage] = useState(null);
+  // Add a loading state for the image
+  const [loadingImage, setLoadingImage] = useState(true);
+
+  // async function authorProfile(authorId) {
+  //   const { data } = await axios.get(
+  //     `https://us-central1-nft-cloud-functions.cloudfunctions.net/authors?author=${authorId}`
+  //   );
+  //   console.log(data);
+  //   setAuthorData(data)
+
+  // }
+
+  // useEffect(() => {
+  //   authorProfile(authorId);
+  // }, [authorId]);
+
+  //   // Destructure the authorData for easier access
+  //   const { authorName, authorImage } = authorData;
+
+  // async function authorProfile(authorId) {
+  //   try {
+  //     const { data } = await axios.get(
+  //       `https://us-central1-nft-cloud-functions.cloudfunctions.net/authors?author=${authorId}`
+  //     );
+  //     console.log(data);
+  //     setAuthorData(data);
+
+  //     setAuthorName(data.authorName);
+  //     setAuthorImage(data.authorImage);
+  //   } catch (error) {
+  //     // Handle error, e.g., setAuthorData to null or show an error message
+  //     console.error("Error fetching author data:", error);
+  //     setAuthorData(null);
+  //   }
+  // }
+
+  // useEffect(() => {
+  //   const authorId = 73855012
+  //   authorProfile(authorId);
+  // }, [authorId]);
+
+  // // Check if authorData is null before trying to destructure it
+  // if (authorData === null) {
+  //   return <div>Loading...</div>; // Render a loading state while fetching data
+  // }
+
+  // async function authorProfile(authorId) {
+  //   try {
+  //     const { data } = await axios.get(
+  //       `https://us-central1-nft-cloud-functions.cloudfunctions.net/authors?author=${authorId}`
+  //     );
+  //     console.log(data);
+  //     setAuthorData(data);
+
+  //     setAuthorName(data.authorName);
+  //     setAuthorImage(data.authorImage);
+
+  //     // After setting the authorImage, set loadingImage to false
+  //     setLoadingImage(false);
+  //   } catch (error) {
+  //     // Handle error, e.g., setAuthorData to null or show an error message
+  //     console.error("Error fetching author data:", error);
+  //     setAuthorData(null);
+  //     setLoadingImage(false); // Ensure loading state is also updated in case of an error
+  //   }
+  // }
+
+  //   useEffect(() => {
+  //   const authorId =
+  //   83937449
+  //   authorProfile(authorId);
+  // }, [authorId]);
+
+  // // ... (previous code) ...
+
+  // // Check if authorData is null or image is loading before trying to destructure it
+  // if (authorData === null || loadingImage) {
+  //   return <div>Loading...</div>; // Render a loading state while fetching data or image
+  // }
+
+// Destructure the authorData for easier access
+const { authorName, authorImage } = authorData;
+
+async function authorProfile(authorId) {
+  try {
+    const { data } = await axios.get(
+      `https://us-central1-nft-cloud-functions.cloudfunctions.net/authors?author=${authorId}`
+    );
+    console.log(data);
+    setAuthorData(data);
+
+    // After setting the authorImage, set loadingImage to false
+    setLoadingImage(false);
+  } catch (error) {
+    // Handle error, e.g., setAuthorData to an empty object or show an error message
+    console.error("Error fetching author data:", error);
+    setAuthorData({});
+    setLoadingImage(false); // Ensure loading state is also updated in case of an error
+  }
+}
+
+useEffect(() => {
+  authorProfile(authorId);
+}, [authorId]);
+
+// Check if authorData is empty or image is loading before trying to destructure it
+if (Object.keys(authorData).length === 0 || loadingImage) {
+  return <div>Loading...</div>; // Render a loading state while fetching data or image
+}
+
+
   return (
     <div id="wrapper">
       <div className="no-bottom no-top" id="content">
@@ -25,12 +141,12 @@ const Author = () => {
                 <div className="d_profile de-flex">
                   <div className="de-flex-col">
                     <div className="profile_avatar">
-                      <img src={AuthorImage} alt="" />
+                      <img src={authorImage?.authorImage} alt="" />
 
                       <i className="fa fa-check"></i>
                       <div className="profile_name">
                         <h4>
-                          Monica Lucas
+                          Monica Lucas{authorName}
                           <span className="profile_username">@monicaaaa</span>
                           <span id="wallet" className="profile_wallet">
                             UDHUHWudhwd78wdt7edb32uidbwyuidhg7wUHIFUHWewiqdj87dy7
