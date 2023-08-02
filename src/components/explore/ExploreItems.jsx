@@ -11,7 +11,6 @@ const ExploreItems = () => {
   const [numItemsToShow, setNumItemsToShow] = useState(8);
   const [loading, setLoading] = useState(true);
 
-
   async function getExploreItems(likes_high_to_low) {
     const { data } = await axios.get(
       `https://us-central1-nft-cloud-functions.cloudfunctions.net/explore?filter=${likes_high_to_low}`
@@ -19,7 +18,6 @@ const ExploreItems = () => {
     console.log(data);
     setExplore(data);
   }
-
 
   setTimeout(() => {
     setLoading(false);
@@ -56,7 +54,7 @@ const ExploreItems = () => {
           <div className="nft__item">
             <div className="author_list_pp">
               <Link
-                to="/author"
+                to={`/author/${user.authorId}`}
                 data-bs-toggle="tooltip"
                 data-bs-placement="top"
               >
