@@ -11,7 +11,6 @@ import "slick-carousel/slick/slick-theme.css";
 import "react-loading-skeleton/dist/skeleton.css";
 import CardSkeleton from "../UI/CardSkeleton";
 
-
 const HotCollections = () => {
   const [profile, setprofile] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -57,9 +56,7 @@ const HotCollections = () => {
                 <CardSkeleton />
               ) : (
                 profile.slice(0, 6).map((user) => (
-                  <div
-                    key={user.id}
-                  >
+                  <div key={user.id}>
                     <div className="nft_coll">
                       <div className="nft_wrap">
                         <Link to="/item-details">
@@ -71,7 +68,7 @@ const HotCollections = () => {
                         </Link>
                       </div>
                       <div className="nft_coll_pp">
-                        <Link to="/author">
+                        <Link to={`/author/${user.authorId}`}>
                           <img
                             className="lazy pp-coll"
                             src={user.authorImage}
