@@ -10,6 +10,7 @@ const ItemDetails = () => {
   }, []);
 
   return (
+    // TESTING
     <div id="wrapper">
       <div className="no-bottom no-top" id="content">
         <div id="top"></div>
