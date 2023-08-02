@@ -6,7 +6,6 @@ import Skeleton from "react-loading-skeleton";
 import { Link } from "react-router-dom";
 
 const TopSellers = () => {
-
   const [sellers, setSellers] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -38,7 +37,7 @@ const TopSellers = () => {
               {sellers.map((user) => (
                 <li key={user.id}>
                   <div className="author_list_pp">
-                    <Link to="/author">
+                    <Link to={`/author/${user.authorId}`}>
                       {loading ? (
                         <Skeleton className="author-img__skeleton" />
                       ) : (
@@ -55,7 +54,9 @@ const TopSellers = () => {
                     {loading ? (
                       <Skeleton className="author-name__skeleton" />
                     ) : (
-                      <Link to="/author">{user.authorName}</Link>
+                      <Link to={`/author/${user.authorId}`}>
+                        {user.authorName}
+                      </Link>
                     )}
                     {loading ? (
                       <Skeleton className="price__skeleton" />

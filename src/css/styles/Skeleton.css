@@ -72,7 +72,6 @@ NEW ITEMS SKELETON
   width: 80px;
 }
 
-
 /* 
 
 
@@ -81,16 +80,65 @@ TOP SELLERS
 
 */
 
-.author-img__skeleton{
-    width: 50px;
-    height: 50px;
+.author-img__skeleton {
+  width: 50px;
+  height: 50px;
+  border-radius: 9999px;
+}
+
+.author-name__skeleton {
+  width: 100px;
+}
+
+.price__skeleton {
+  width: 50px;
+}
+
+/* 
+
+
+AUTHOR SKELETON
+
+
+*/
+
+.author__banner--skeleton {
+  margin: 0 auto;
+  height: 360px;
+  width: 100%;
+}
+
+.profile_avatar--skeleton{
+    width: 150px;
+    height: 150px;
     border-radius: 9999px;
+    z-index: 0;
 }
 
-.author-name__skeleton{
+.skeleton__container{
+    display: flex;
+    flex-direction: column;
+}
+
+.author-name--skeleton{
+    width: 140px;
+}
+
+.tag--skeleton{
+    width: 80px;
+}
+
+.address--skeleton{
+    width: 180px;
+}
+
+.followers__skeleton{
     width: 100px;
+    margin-right: 20px;
+    height: 24px;
 }
 
-.price__skeleton{
-    width: 50px;
+.follow-btn__skeleton{
+    width: 100px;
+    height: 40px;
 }
