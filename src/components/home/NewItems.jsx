@@ -133,7 +133,7 @@ const NewItems = () => {
                         </div>
                       </div>
 
-                      <Link to="/item-details">
+                      <Link to={`/item-details/${user.nftId}`}>
                         {loading ? (
                           <Skeleton className="img__skeleton" />
                         ) : (

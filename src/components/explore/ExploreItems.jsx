@@ -15,7 +15,6 @@ const ExploreItems = () => {
     const { data } = await axios.get(
       `https://us-central1-nft-cloud-functions.cloudfunctions.net/explore?filter=${likes_high_to_low}`
     );
-    console.log(data);
     setExplore(data);
   }
 
@@ -92,7 +91,7 @@ const ExploreItems = () => {
                   </div>
                 </div>
               </div>
-              <Link to="/item-details">
+              <Link to={`/item-details/${user.nftId}`}>
                 {loading ? (
                   <Skeleton className="img__skeleton" />
                 ) : (

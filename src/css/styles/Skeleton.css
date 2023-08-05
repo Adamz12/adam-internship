@@ -108,37 +108,74 @@ AUTHOR SKELETON
   width: 100%;
 }
 
-.profile_avatar--skeleton{
-    width: 150px;
-    height: 150px;
-    border-radius: 9999px;
-    z-index: 0;
+.profile_avatar--skeleton {
+  width: 150px;
+  height: 150px;
+  border-radius: 9999px;
+  z-index: 0;
 }
 
-.skeleton__container{
-    display: flex;
-    flex-direction: column;
+.skeleton__container {
+  display: flex;
+  flex-direction: column;
 }
 
-.author-name--skeleton{
-    width: 140px;
+.author-name--skeleton {
+  width: 140px;
 }
 
-.tag--skeleton{
-    width: 80px;
+.tag--skeleton {
+  width: 80px;
 }
 
-.address--skeleton{
-    width: 180px;
+.address--skeleton {
+  width: 180px;
 }
 
-.followers__skeleton{
-    width: 100px;
-    margin-right: 20px;
-    height: 24px;
+.followers__skeleton {
+  width: 100px;
+  margin-right: 20px;
+  height: 24px;
 }
 
-.follow-btn__skeleton{
-    width: 100px;
-    height: 40px;
+.follow-btn__skeleton {
+  width: 100px;
+  height: 40px;
+}
+
+/* 
+
+
+
+ItemDetailes Skeleton
+
+
+
+*/
+
+.nft--img__skeleton {
+  height: 100%;
+  width: 100%;
+}
+
+.item--title__skeleton {
+  height: 32px;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.views__skeleton {
+  width: 80px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+.likes__skeleton {
+  width: 80px;
+  height: 30px;
+}
+
+.description__skeleton{
+    width: 100%;
+    margin-bottom: 20px;
 }
