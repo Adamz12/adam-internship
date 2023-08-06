@@ -4,6 +4,8 @@ import { useEffect } from "react";
 import { useState } from "react";
 import Skeleton from "react-loading-skeleton";
 import { Link } from "react-router-dom";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const TopSellers = () => {
   const [sellers, setSellers] = useState([]);
@@ -21,10 +23,14 @@ const TopSellers = () => {
     getTopSellets();
   }, [loading]);
 
+  useEffect(() => {
+    AOS.init({ duration: 4000 });
+  }, []);
+
   return (
     <section id="section-popular" className="pb-5">
       <div className="container">
-        <div className="row">
+        <div className="row" data-aos="fade-in">
           <div className="col-lg-12">
             <div className="text-center">
               <h2>Top Sellers</h2>
