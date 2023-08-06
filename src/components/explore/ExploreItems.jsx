@@ -5,6 +5,8 @@ import { useState } from "react";
 import Skeleton from "react-loading-skeleton";
 import { Link } from "react-router-dom";
 import Timer from "../UI/Timer";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const ExploreItems = () => {
   const [explore, setExplore] = useState([]);
@@ -26,6 +28,10 @@ const ExploreItems = () => {
     getExploreItems("");
   }, [loading]);
 
+  useEffect(() => {
+    AOS.init({ duration: 2000 });
+  }, []);
+
   function loadmore() {
     setNumItemsToShow((prevNumItems) => prevNumItems + 4);
   }
@@ -46,7 +52,7 @@ const ExploreItems = () => {
       </div>
       {explore.slice(0, numItemsToShow).map((user) => (
         <div
-          key={user.id}
+          key={user.id} data-aos="fade-in"
           className="d-item col-lg-3 col-md-6 col-sm-6 col-xs-12"
           style={{ display: "block", backgroundSize: "cover" }}
         >

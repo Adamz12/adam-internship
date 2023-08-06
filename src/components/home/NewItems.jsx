@@ -6,6 +6,8 @@ import OwlCarousel from "react-owl-carousel";
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
 import Skeleton from "react-loading-skeleton";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const NewItems = () => {
   const [items, setItems] = useState([]);
@@ -63,12 +65,16 @@ const NewItems = () => {
     retrievingItems();
   }, [loading]);
 
+  useEffect(() => {
+    AOS.init({ duration: 2000 });
+  }, []);
+
   return (
     <section id="section-items" className="no-bottom">
       <div className="container">
         <div className="row">
           <div className="col-lg-12">
-            <div className="text-center">
+            <div className="text-center" data-aos="fade-in">
               <h2>New Items</h2>
               <div className="small-border bg-color-2"></div>
             </div>
@@ -88,7 +94,7 @@ const NewItems = () => {
               }}
             >
               {items.slice(0, 6).map((user) => (
-                <div key={user.id}>
+                <div key={user.id} data-aos="fade-in">
                   <div className="nft__item">
                     <div className="author_list_pp">
                       <Link

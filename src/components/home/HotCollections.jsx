@@ -10,13 +10,15 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "react-loading-skeleton/dist/skeleton.css";
 import CardSkeleton from "../UI/CardSkeleton";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 
 const HotCollections = () => {
   const [profile, setprofile] = useState([]);
   const [loading, setLoading] = useState(true);
 
   async function getData() {
-    // testing a
     const { data } = await axios.get(
       "https://us-central1-nft-cloud-functions.cloudfunctions.net/hotCollections"
     );
@@ -27,11 +29,15 @@ const HotCollections = () => {
   useEffect(() => {
     getData();
   }, [loading]);
+  
+  useEffect(() => {
+    AOS.init({ duration: 2000 });
+  }, []);
 
   return (
     <section id="section-collections" className="no-bottom">
       <div className="container">
-        <div className="row">
+        <div className="row" data-aos="fade-in">
           <div className="col-lg-12">
             <div className="text-center">
               <h2>Hot Collections</h2>
