@@ -41,7 +41,7 @@ const AuthorItems = ({ nftCollection, authorImage, loading }) => {
                       </div>
                     </div>
                   </div>
-                  <Link to="/item-details">
+                  <Link to={`/item-details/${item.nftId}`}>
                     {loading ? (
                       <Skeleton className="img__skeleton" />
                     ) : (
