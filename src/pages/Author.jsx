@@ -113,7 +113,7 @@ const Author = () => {
                         <Skeleton className="follow-btn__skeleton" />
                       ) : (
                         <Link to="#" className="btn-main" onClick={follow}>
-                          Follow
+                          {authorData.isFollowing ? "unFollow" : "Follow"}
                         </Link>
                       )}
                     </div>
