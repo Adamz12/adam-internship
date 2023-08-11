@@ -22,7 +22,7 @@ const ExploreItems = () => {
 
   setTimeout(() => {
     setLoading(false);
-  }, 2000);
+  }, 3000);
 
   useEffect(() => {
     getExploreItems("");
@@ -52,7 +52,8 @@ const ExploreItems = () => {
       </div>
       {explore.slice(0, numItemsToShow).map((user) => (
         <div
-          key={user.id} data-aos="fade-in"
+          key={user.id}
+          data-aos="fade-in"
           className="d-item col-lg-3 col-md-6 col-sm-6 col-xs-12"
           style={{ display: "block", backgroundSize: "cover" }}
         >
@@ -131,9 +132,16 @@ const ExploreItems = () => {
         </div>
       ))}
       <div className="col-md-12 text-center">
-        <Link to="" id="loadmore" className="btn-main lead" onClick={loadmore}>
-          Load more
-        </Link>
+        {numItemsToShow < explore.length && (
+          <Link
+            to=""
+            id="loadmore"
+            className="btn-main lead"
+            onClick={loadmore}
+          >
+            Load More
+          </Link>
+        )}
       </div>
     </>
   );

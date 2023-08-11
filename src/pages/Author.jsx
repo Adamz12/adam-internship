@@ -13,7 +13,6 @@ const Author = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // t
     async function authorProfile() {
       const { data } = await axios.get(
         `https://us-central1-nft-cloud-functions.cloudfunctions.net/authors?author=${id}`
@@ -114,7 +113,7 @@ const Author = () => {
                         <Skeleton className="follow-btn__skeleton" />
                       ) : (
                         <Link to="#" className="btn-main" onClick={follow}>
-                          Follow
+                          {authorData.isFollowing ? "unFollow" : "Follow"}
                         </Link>
                       )}
                     </div>
