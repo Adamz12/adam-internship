@@ -13,6 +13,7 @@ const Author = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    // t
     async function authorProfile() {
       const { data } = await axios.get(
         `https://us-central1-nft-cloud-functions.cloudfunctions.net/authors?author=${id}`
