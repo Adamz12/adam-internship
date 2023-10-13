@@ -49,7 +49,8 @@ const TopSellers = () => {
                         <img
                           className="lazy pp-author"
                           src={user.authorImage}
-                          alt=""
+                          alt="author-image"
+                          loading="lazy"
                         />
                       )}
                       <i className="fa fa-check"></i>

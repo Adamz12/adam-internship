@@ -106,7 +106,7 @@ const NewItems = () => {
                         {loading ? (
                           <Skeleton className="items-circle__skeleton" />
                         ) : (
-                          <img className="lazy" src={user.authorImage} alt="" />
+                          <img className="lazy" src={user.authorImage} alt="author-image" loading="lazy" />
                         )}
                         <i className="fa fa-check"></i>
                       </Link>
@@ -146,7 +146,8 @@ const NewItems = () => {
                           <img
                             src={user.nftImage}
                             className="lazy nft__item_preview"
-                            alt=""
+                            alt="nft-image"
+                            loading="lazy"
                           />
                         )}
                       </Link>

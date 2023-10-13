@@ -22,7 +22,7 @@ const Nav = () => {
                 <div className="de-flex-col">
                   <div id="logo">
                     <Link to="/">
-                      <img alt="" className="logo-2" src={Logo} />
+                      <img alt="logo" className="logo-2" src={Logo} loading="lazy" />
                     </Link>
                   </div>
                 </div>

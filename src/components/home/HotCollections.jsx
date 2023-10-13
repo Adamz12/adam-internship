@@ -79,7 +79,8 @@ const HotCollections = () => {
                           <img
                             className="lazy pp-coll"
                             src={user.authorImage}
-                            alt=""
+                            alt="author-image"
+                            loading="lazy"
                           />
                         </Link>
                         <i className="fa fa-check"></i>
