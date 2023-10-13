@@ -18,7 +18,7 @@ const AuthorItems = ({ nftCollection, authorImage, loading }) => {
                     {loading ? (
                       <Skeleton className="items-circle__skeleton" />
                     ) : (
-                      <img className="lazy" src={authorImage} alt="" />
+                      <img className="lazy" src={authorImage} alt="author-image" loading="lazy" />
                     )}
                     <i className="fa fa-check"></i>
                   </Link>
@@ -48,7 +48,8 @@ const AuthorItems = ({ nftCollection, authorImage, loading }) => {
                       <img
                         src={item.nftImage}
                         className="lazy nft__item_preview"
-                        alt=""
+                        alt="nft-image"
+                        loading="loading"
                       />
                     )}
                   </Link>

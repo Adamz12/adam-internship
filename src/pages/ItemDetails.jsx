@@ -39,7 +39,8 @@ const ItemDetails = () => {
                   <img
                     src={itemDetails.nftImage}
                     className="img-fluid img-rounded mb-sm-30 nft-image"
-                    alt=""
+                    alt="nft-image"
+                    loading="lazy"
                   />
                 )}
               </div>
@@ -123,7 +124,8 @@ const ItemDetails = () => {
                               <img
                                 className="lazy"
                                 src={itemDetails.creatorImage}
-                                alt=""
+                                alt="creator-image"
+                                loading="lazy"
                               />
                             )}
                             <i className="fa fa-check"></i>
@@ -147,7 +149,7 @@ const ItemDetails = () => {
                         <Skeleton width={110} />
                       ) : (
                         <>
-                          <img src={EthImage} alt="" />
+                          <img src={EthImage} alt="eth-image" loading="lazy" />
                           <span>{itemDetails.price}</span>
                         </>
                       )}

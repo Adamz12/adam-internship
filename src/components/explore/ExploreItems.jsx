@@ -67,7 +67,7 @@ const ExploreItems = () => {
                 {loading ? (
                   <Skeleton className="items-circle__skeleton" />
                 ) : (
-                  <img className="lazy" src={user.authorImage} alt="" />
+                  <img className="lazy" src={user.authorImage} alt="author-image" loading="lazy" />
                 )}
                 <i className="fa fa-check"></i>
               </Link>

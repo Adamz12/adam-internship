@@ -73,7 +73,7 @@ const Author = () => {
                       {loading ? (
                         <Skeleton className="profile_avatar--skeleton" />
                       ) : (
-                        <img src={authorImage} alt="" />
+                        <img src={authorImage} alt="author-image" loading="lazy" />
                       )}
 
                       <i className="fa fa-check"></i>
